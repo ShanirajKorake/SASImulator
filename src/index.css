@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body{
+  background-color: black;
+  color: white;
+}
+
+.bebas-neue{
+  font-family: "Bebas Neue", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.bebas-neue1{
+  font-family: "Bebas Neue", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.josefin-sans{
+  font-family: "Josefin Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px rgb(255, 123, 0), 0 0 10px rgb(255, 145, 0),0 0 12px rgb(255, 145, 0) ;
+}
+
+.hx{
+  text-shadow:
+     3px  3px 0 #ff7504,
+    -1px -1px 0 #ff7504,  
+     1px -1px 0 #ff7504,
+    -1px  1px 0 #ff7504,
+     1px  1px 0 #ff7504;
+}
+
+.anton-regular {
+  font-family: "Anton", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes shine {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(100%);
+  }
+}
+
+.animate-shine {
+  animation: shine 2s linear infinite;
+}
+
+.shine-effect {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, transparent, rgb(230, 224, 224), transparent) 4;
+  box-shadow: 0 0 10px rgb(88, 86, 86), 0 0 20px rgb(211, 191, 191);
+}
