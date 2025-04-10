@@ -8,20 +8,20 @@ import Page3 from './Components/Page3/Page3'
 
 function App() {
   return (
-    <>
-  <div className="flex flex-col h-screen border-white">
+    <div>
+  <div className="flex flex-col h-screen border-white bg-gray-900 shine-effect">
       <Header />
       <Hero />
     </div>
 
+      <Punch1/>
     <div className="flex flex-col h-screen">
-      <Punch1 />
       <Page2/>
-    {/* <TestComponent/> */}
     </div>
-    {/* <div className='h-screen'>sas</div> */}
     <Page3/>
-      </>
+    {/* <div className='h-screen'>sas</div> */}
+ 
+      </div>
   )
 }
 

@@ -41,7 +41,7 @@ function Hero() {
 
   return (
     <div 
-      className="flex-1 bg-green-500 p-10 bg-cover bg-left relative flex items-center overflow-hidden"
+      className="flex-1 bg-green-500 p-10 bg-cover bg-center relative flex items-center"
       ref={hero}
       style={{ backgroundImage: `url('/Render_1.jpg')` }}
     >

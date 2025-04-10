@@ -18,15 +18,15 @@ function Header() {
         <div className="w-full px-10 py-2 flex items-center justify-between bg-gray-900 text-gray-200 shadow-lg relative overflow-hidden shine-effect">
             <div className="josefin-sans text-sm w-1/3"
             >
-                <text ref={heading1} className="inline-block">
+                <div ref={heading1} className="inline-block">
                     from SAS AUTOMATION
-                </text>
-                <text ref={heading} className="inline-block bebas-neue text-4xl pl-1">
-                    <text className="text-5xl">
-                        S<text className='text-purple-400'>A</text>S<text className='text-purple-400'>I</text>
-                    </text>
+                </div>
+                <div ref={heading} className="inline-block bebas-neue text-4xl pl-1">
+                    <span className="text-5xl">
+                        S<span className='text-purple-400'>A</span>S<span className='text-purple-400'>I</span>
+                    </span>
                     mulator
-                </text>
+                </div>
             </div>
             <div className="w-1/3 josefin-sans px-10">
                 <ul className="flex justify-evenly w-full">
