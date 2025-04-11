@@ -16,7 +16,6 @@ body{
 .bebas-neue1{
   font-family: "Bebas Neue", serif;
   font-weight: 700;
-  font-style: normal;
 }
 
 .josefin-sans{
@@ -62,5 +61,11 @@ body{
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, transparent, rgb(230, 224, 224), transparent) 4;
   box-shadow: 0 0 10px rgb(88, 86, 86), 0 0 20px rgb(211, 191, 191);
+}
+
+.shine-effect2 {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(to right, transparent, rgb(230, 224, 224), transparent) 4;
+  border-image-slice: 1;
 }
 

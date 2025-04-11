@@ -5,6 +5,7 @@ import Punch1 from './Components/Punch1/Punch1'
 import Page2 from './Components/Page2/Page2'
 import TestComponent from './Components/TestComp/TestComponent'
 import Page3 from './Components/Page3/Page3'
+import Footer from './Components/Footer/Footer'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
     </div>
     <Page3/>
     {/* <div className='h-screen'>sas</div> */}
- 
+    <Footer/>
       </div>
   )
 }

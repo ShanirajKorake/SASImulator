@@ -52,13 +52,13 @@ function Hero() {
       <div className="relative z-10 inline-flex flex-col drop-shadow-xl shadow-black text-white items-start">
         {/* Heading */}
         <div
-          className="relative font-bold bebas-neue1 pl-20 tracking-[0.7rem] text-[9em] inline-flex items-center glow-text"
+          className="relative font-bold bebas-neue1 pl-20 tracking-[0.6rem] text-[9em] inline-flex items-baseline glow-text"
           ref={head1}
         >
           <span>
             S<span className="neon-text">A</span>S<span className="neon-text">I</span>
           </span>
-          <span className="ml-4">MULATOR</span>
+          <span className=" text-[6rem]">MULATOR</span>
           <img
             ref={leaf1}
             src="./leaf1.png"
