@@ -31,13 +31,13 @@ function Header() {
             <div className="w-1/3 josefin-sans px-10">
                 <ul className="flex justify-evenly w-full">
                     <li className="hover:text-green-400 transition duration-200 cursor-pointer">Off-road</li>
-                    <li className="hover:text-green-400 transition duration-200">City</li>
-                    <li className="hover:text-green-400 transition duration-200">E-Twin</li>
+                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">City</li>
+                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">E-Twin</li>
                 </ul>
             </div>
             <div className="w-1/6 flex justify-end">
-                <i className="ri-map-pin-line mx-5 text-xl hover:text-blue-400 transition duration-200"></i>
-                <i className="ri-menu-line text-xl hover:text-purple-400 transition duration-200"></i>
+                <i className="ri-map-pin-line mx-5 text-xl hover:text-blue-400 transition duration-200 cursor-pointer"></i>
+                <i className="ri-menu-line text-xl hover:text-purple-400 transition duration-200 cursor-pointer"></i>
             </div>
         </div>
     );

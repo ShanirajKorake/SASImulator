@@ -16,19 +16,19 @@ function Hero() {
       ease: 'power3.out',
     });
 
-    tl1.from(head1.current, {
-      scale: 0.9,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out',
-    });
+    // tl1.from(head1.current, {
+    //   scale: 0.9,
+    //   opacity: 0,
+    //   duration: 0.8,
+    //   ease: 'power3.out',
+    // });
 
-    tl1.from("span", {
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.2,
-      ease: 'power2.out',
-    });
+    // tl1.from("span", {
+    //   opacity: 0,
+    //   duration: 0.5,
+    //   stagger: 0.2,
+    //   ease: 'power2.out',
+    // });
     tl1.from(leaf1.current, {
       rotate: -45,
       x: -50,
@@ -52,13 +52,13 @@ function Hero() {
       <div className="relative z-10 inline-flex flex-col drop-shadow-xl shadow-black text-white items-start">
         {/* Heading */}
         <div
-          className="relative font-bold bebas-neue1 pl-20 tracking-[0.6rem] text-[9em] inline-flex items-baseline glow-text"
+          className="relative font-bold bebas-neue1 pl-20 tracking-[0.6 rem] text-[9em] inline-flex items-baseline glow-text"
           ref={head1}
         >
           <span>
             S<span className="neon-text">A</span>S<span className="neon-text">I</span>
           </span>
-          <span className=" text-[6rem]">MULATOR</span>
+          <span className="pl-1 text-[6rem] tracking-wider">MULATOR</span>
           <img
             ref={leaf1}
             src="./leaf1.png"

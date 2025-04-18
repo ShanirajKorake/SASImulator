@@ -12,15 +12,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 // 🔄 Rotating model component
 const RotatingModel = ({ modelPath, scale, position }) => {
-  const pivotRef = useRef();
+  const pivotRef = useRef();  
   const [model, setModel] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useFrame(() => {
     if (pivotRef.current) {
-      pivotRef.current.rotation.y += 0.005;
-      pivotRef.current.rotation.x = Math.sin(Date.now() * 0.001) * 0.05; // added subtle breathing
+      pivotRef.current.rotation.y += 0.005; // added subtle breathing
     }
   });
 
@@ -78,7 +77,7 @@ const RotatingModel = ({ modelPath, scale, position }) => {
 const ThreeCanvas = ({ modelPath, scale, position }) => (
   <Canvas
     shadows
-    camera={{ position: [0, 2, 6], fov: 90 }}
+    camera={{ position: [0, 2, 6], fov: 60 }}
     className="rounded-xl"
   >
     <ambientLight intensity={0.5} />
@@ -106,51 +105,51 @@ const Page3 = () => {
   const srotri = useRef();
   const textBlocks = useRef([]);
 
-  useGSAP(() => {
-    gsap.to(punch.current.children, {
-      y: 0,
-      opacity:1,
-      duration: .5,
-      scrollTrigger: {
-        trigger: punch.current,
-        start: 'top 80%',
-        end: 'top 30%',
-        scrub: false,
-        toggleActions: 'play none none reverse',
-      },
-    });
+  // useGSAP(() => {
+  //   gsap.to(punch.current.children, {
+  //     y: 0,
+  //     opacity:1,
+  //     duration: .5,
+  //     scrollTrigger: {
+  //       trigger: punch.current,
+  //       start: 'top 80%',
+  //       end: 'top 30%',
+  //       scrub: false,
+  //       toggleActions: 'play none none reverse',
+  //     },
+  //   });
 
-    textBlocks.current.forEach((block) => {
-      gsap.fromTo(
-        block,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: block,
-            start: "top 85%",
-          },
-        }
-      );
-    });
-  }, []);
+  //   textBlocks.current.forEach((block) => {
+  //     gsap.fromTo(
+  //       block,
+  //       { opacity: 0, y: 30 },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         duration: 0.7,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: block,
+  //           start: "top 85%",
+  //         },
+  //       }
+  //     );
+  //   });
+  // }, []);
 
   return (
     <div
       ref={srotri}
       className="flex flex-col bg-gray-900 min-h-screen text-gray-200 josefin-sans"
     >
-      <div className="h-11">
+      {/* <div className="h-11">
         <div
           ref={punch}
           className="italic bebas-neue1 text-6xl tracking-[0.9rem] mx-16 overflow-hidden opacity"
         >
           Our Products  
         </div>
-      </div>
+      </div> */}
 
       {/* Section 1 */}
       <div className="flex flex-col md:flex-row h-[60vh] bg-gray-950 rounded-xl shadow-2xl overflow-hidden w-9/12 ml-10 mb-10">
