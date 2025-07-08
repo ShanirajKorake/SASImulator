@@ -35,30 +35,29 @@ function Header() {
 
     return (
         <>
-        <div className="w-full sm:w-full px-10 py-2 flex items-center justify-between bg-black text-gray-200 shadow-lg relative overflow-hidden shine-effect">
+        <div className="w-full sm:w-full px-5 sm:px-10 py-2 flex items-center justify-between bg-black text-gray-200 shadow-lg relative overflow-hidden shine-effect">
             <div className="josefin-sans text-sm w-1/3"
             >
                 
-                <div ref={heading} className="flex h-fit text-lg gap-2 justify-center items-center">
+                <div ref={heading} className="flex h-fit text-lg gap-2 items-center">
                     <img src="./sas-dark.png" alt="logo" className='w-16 h-16'/>
-                    {/* <div className='block pl-2 h-min place-self-center'> */}
-                        <pre className='leading-[1.2] text-lg bebas-neue1'>
-                           {`SAS 
+                        <pre className='text-3xl sm:hidden leading-[0.9] bebas-neue1'>
+                           {`SAS
 Automation`}
                         </pre>
-                        
-                    {/* </div> */}
-
+                        <div className='text-3xl hidden sm:block tracking-wide leading-[0.9] bebas-neue1' >
+                            SAS AUTOMATION PVT. LTD.
+                        </div>
                 </div>
             </div>
-            <div className="w-1/3 josefin-sans px-10 hidden sm:flex">
-                <ul className="flex justify-evenly w-full">
-                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">Off-road</li>
-                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">City</li>
-                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">E-Twin</li>
+            <div className="w-1/3 josefin-sans px-10 hidden sm:flex ">
+                <ul className="flex justify-end gap-12 w-full">
+                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">Home</li>
+                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">About us</li>
+                    <li className="hover:text-green-400 transition duration-200 cursor-pointer">Our Products</li>
                 </ul>
             </div>
-            <div className="w-1/6 flex justify-end">
+            <div className="w-1/6 flex justify-end sm:hidden">
                 <i className="ri-map-pin-line mx-5 text-3xl hover:text-blue-400 transition duration-200 cursor-pointer hidden sm:flex"></i>
      <i
                         className="ri-menu-line text-3xl hover:text-purple-400 transition duration-200 cursor-pointer"

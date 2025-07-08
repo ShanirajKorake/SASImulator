@@ -14,7 +14,7 @@ import Page3 from './Components/Page3/Page3'
 function App() {
   return (
     <div>
-  <div className="sm:w-full flex flex-col 2xl:h-screen border-white bg-black">
+  <div className="w-full flex flex-col sm:h-screen border-white bg-black">
       <Header />
       <Hero />
     </div>
