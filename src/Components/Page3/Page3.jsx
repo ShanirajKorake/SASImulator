@@ -1,156 +1,32 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import ModelLoaderWorker from "../../workers/modelLoader.worker?worker";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-
-// 🔄 Rotating model component
-const RotatingModel = ({ modelPath, scale, position }) => {
-  const pivotRef = useRef();  
-  const [model, setModel] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useFrame(() => {
-    if (pivotRef.current) {
-      pivotRef.current.rotation.y += 0.005; // added subtle breathing
-    }
-  });
-
-  useEffect(() => {
-    const worker = new ModelLoaderWorker();
-
-    worker.onmessage = (e) => {
-      if (e.data.type === "success") {
-        const loader = new GLTFLoader();
-        loader.load(
-          modelPath,
-          (gltf) => {
-            gltf.scene.traverse((child) => {
-              if (child.isMesh) {
-                child.castShadow = true;
-                child.receiveShadow = true;
-                child.material.roughness = 0.3;
-                child.material.metalness = 0.7;
-                child.material.envMapIntensity = 1.2;
-              }
-            });
-            setModel(gltf.scene);
-            setLoading(false);
-          },
-          undefined,
-          (err) => setError(err.message)
-        );
-      } else {
-        setError(e.data.error || "Unknown error");
-      }
-    };
-
-    worker.postMessage({ modelPath });
-
-    return () => worker.terminate();
-  }, [modelPath]);
-
-  if (error || loading || !model) {
-    return (
-      <mesh>
-        <boxGeometry />
-        <meshStandardMaterial color={error ? "red" : "gray"} wireframe />
-      </mesh>
-    );
-  }
-
+// 🎥 Video component replacing 3D model
+const VideoPlayer = ({ videoSrc }) => {
   return (
-    <group ref={pivotRef}>
-      <primitive object={model} scale={scale} position={position} />
-    </group>
+    <div className="w-full h-full bg-gray-950">
+      <video
+        src={videoSrc}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-contain rounded-xl"
+      />
+    </div>
   );
 };
 
-// 🎨 Canvas wrapper
-const ThreeCanvas = ({ modelPath, scale, position }) => (
-  <Canvas
-    shadows
-    camera={{ position: [0, 2, 6], fov: 60 }}
-    className="rounded-xl"
-  >
-    <ambientLight intensity={0.5} />
-    <directionalLight
-      castShadow
-      position={[5, 10, 5]}
-      intensity={1.5}
-      shadow-mapSize-width={2048}
-      shadow-mapSize-height={2048}
-    />
-    <spotLight
-      position={[0, 5, 10]}
-      angle={0.3}
-      intensity={1.5}
-      penumbra={0.5}
-      castShadow
-    />
-    <Environment preset="city" />
-    <RotatingModel modelPath={modelPath} scale={scale} position={position} />
-  </Canvas>
-);
 
 const Page3 = () => {
   const punch = useRef();
   const srotri = useRef();
   const textBlocks = useRef([]);
 
-  // useGSAP(() => {
-  //   gsap.to(punch.current.children, {
-  //     y: 0,
-  //     opacity:1,
-  //     duration: .5,
-  //     scrollTrigger: {
-  //       trigger: punch.current,
-  //       start: 'top 80%',
-  //       end: 'top 30%',
-  //       scrub: false,
-  //       toggleActions: 'play none none reverse',
-  //     },
-  //   });
-
-  //   textBlocks.current.forEach((block) => {
-  //     gsap.fromTo(
-  //       block,
-  //       { opacity: 0, y: 30 },
-  //       {
-  //         opacity: 1,
-  //         y: 0,
-  //         duration: 0.7,
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           trigger: block,
-  //           start: "top 85%",
-  //         },
-  //       }
-  //     );
-  //   });
-  // }, []);
-
   return (
     <div
       ref={srotri}
       className="flex flex-col bg-gray-900 min-h-screen text-gray-200 josefin-sans"
     >
-      {/* <div className="h-11">
-        <div
-          ref={punch}
-          className="italic bebas-neue1 text-6xl tracking-[0.9rem] mx-16 overflow-hidden opacity"
-        >
-          Our Products  
-        </div>
-      </div> */}
-
       {/* Section 1 */}
       <div className="flex flex-col md:flex-row h-[60vh] bg-gray-950 rounded-xl shadow-2xl overflow-hidden w-9/12 ml-10 mb-10">
         <div
@@ -165,7 +41,7 @@ const Page3 = () => {
           </p>
         </div>
         <div className="w-full md:w-1/2 h-full">
-          <ThreeCanvas modelPath="/models/model6.glb" scale={7} position={[0, 0, 0]} />
+          <VideoPlayer videoSrc="/vids/vid1.mp4" />
         </div>
       </div>
 
@@ -183,7 +59,7 @@ const Page3 = () => {
           </p>
         </div>
         <div className="w-full md:w-1/2 h-full">
-          <ThreeCanvas modelPath="/models/model2.glb" scale={8} position={[0, 0, 0]} />
+          <VideoPlayer videoSrc="/vids/vid2.mp4" />
         </div>
       </div>
 
@@ -201,7 +77,7 @@ const Page3 = () => {
           </p>
         </div>
         <div className="w-full md:w-1/2 h-full">
-          <ThreeCanvas modelPath="/models/model5.glb" scale={5} position={[0, 0, 0]} />
+          <VideoPlayer videoSrc="/vids/vid3.mp4" />
         </div>
       </div>
     </div>
