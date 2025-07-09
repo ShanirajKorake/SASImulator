@@ -31,9 +31,9 @@ function Punch1() {
     <div
       ref={srotri}
       id="body2"
-      className="flex bg-gray-900 text-gray-200 text-[2rem] sm:text-[4rem] border-none px-8 sm:px-16 bebas-neue1 tracking-[0.1rem] sm:tracking-[0.9rem]"
+      className="flex bg-gray-900 text-gray-200 text-[1.5rem] sm:text-[4rem] border-none px-8 sm:px-16 bebas-neue1 tracking-[0.1rem] sm:tracking-[0.9rem] z-10"
     >
-      <div className="italic overflow-hidden h-10 text-center sm:text-left sm:h-16 w-full" ref={punch}>
+      <div className="italic h-5 text-center sm:text-left sm:h-14 w-full" ref={punch}>
         Custom designed Environments
       </div>
     </div>

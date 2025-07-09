@@ -7,7 +7,7 @@ const slides = [
     subtitle: 'A driving simulator with motion actuators is an advanced system designed to provide a realistic driving experience by mimicking the physical sensations of driving a car. This simulator can be used for professional driver training, research, and entertainment.',
   },
   {
-    image: '/Render3.jpg',
+    image: '/Render05.jpg',
     title: 'SASImulator',
     subtitle: 'A driving simulator with motion actuators is an advanced system designed to provide a realistic driving experience by mimicking the physical sensations of driving a car. This simulator can be used for professional driver training, research, and entertainment.',
   },
@@ -41,7 +41,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="sm:hidden relative w-full h-[700px] sm:flex sm:flex-1 overflow-hidden">
+    <div className="sm:hidden relative w-full h-[70vh] flex sm:flex-1 overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -55,10 +55,10 @@ export default function Carousel() {
         >
           {/* Overlay with semi-transparent black */}
           <div className="w-full h-full bg-black bg-opacity-20 flex flex-col justify-end items-center px-6 pb-2 text-center">
-            <h2 className="text-gray-200 text-5xl sm:text-6xl font-bold mb-4 drop-shadow-lg bebas-neue1">
+            <h2 className="text-gray-200 text-4xl sm:text-6xl font-bold mb-4 drop-shadow-lg bebas-neue1">
               {slide.title}
             </h2>
-            <p className="text-gray-200 text-lg sm:text-2xl max-w-2xl drop-shadow-md josefin-sans">
+            <p className="text-gray-200 text-sm bg-black bg-opacity-35 rounded sm:text-2xl max-w-2xl drop-shadow-md josefin-sans">
               {slide.subtitle}
             </p>
           </div>

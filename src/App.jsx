@@ -20,8 +20,8 @@ function App() {
       <Hero />
     </div>
       <Page5/>
-      <Punch1/>
     <div className="flex flex-col h-[600px] sm:h-screen">
+      <Punch1/>
       <Page2/>
     </div>
 
@@ -30,11 +30,11 @@ function App() {
     <Page3/>
     </div>
     
+    <div className="flex flex-col h-[37vh] sm:h-[110vh] ">
     <Punch4/>
-    <div className="flex flex-col h-[32vh] sm:h-[93vh]">
     <Page4/>
     </div>
-    <Page6/>
+
     <Footer/>
       </div>
   )

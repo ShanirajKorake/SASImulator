@@ -48,9 +48,9 @@ function Page2() {
   }, [])
 
   return (
-    <div className=' h-full flex flex-col  pt-0 px-4 sm:px-10 border-none bg-gray-900 pb-10'>
+    <div className=' h-full flex flex-col  pt-0 px-4 sm:px-10 border-none bg-gray-900 pb-10 -z-0'>
       <div 
-      className='sm:hidden flex-none bg-black rounded-t-xl w-full text-center border-none josefin-sans '
+      className='sm:hidden flex-none bg-black rounded-t-xl w-full text-center border-none josefin-sans pt-2 '
       >
         <p className='text-lg text-white font-light pt-5 px-10 ' ref={blockRef}>
           Our motion-enabled driving simulator delivers a lifelike experience by replicating real driving sensations. Perfect for training, research, and immersive entertainment.

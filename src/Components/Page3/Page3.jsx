@@ -3,14 +3,14 @@ import React, { useRef } from "react";
 // 🎥 Video component replacing 3D model
 const VideoPlayer = ({ videoSrc }) => {
   return (
-    <div className="w-full h-full bg-gray-950">
+    <div className="w-full h-full bg-black flex items-center justify-center">
       <video
         src={videoSrc}
         autoPlay
         loop
         muted
         playsInline
-        className="w-full h-full object-contain rounded-xl"
+        className="max-w-full max-h-full object-contain"
       />
     </div>
   );
@@ -28,7 +28,7 @@ const Page3 = () => {
       className="flex flex-col bg-gray-900 min-h-screen text-gray-200 josefin-sans"
     >
       {/* Section 1 */}
-      <div className="flex flex-col md:flex-row h-[60vh] bg-gray-950 rounded-xl shadow-2xl overflow-hidden sm:w-9/12 sm:ml-10 mb-4 sm:mb-10 mx-4">
+      <div className="flex flex-col md:flex-row h-auto bg-gray-950 rounded-xl shadow-2xl overflow-hidden sm:w-9/12 sm:ml-10 mb-4 sm:mb-10 mx-4">
         <div
           ref={(el) => (textBlocks.current[0] = el)}
           className="w-full p-6 md:text-left flex flex-col justify-center"
@@ -46,7 +46,7 @@ const Page3 = () => {
       </div>
 
       {/* Section 2 */}
-      <div className="flex flex-col md:flex-row-reverse h-[60vh] bg-gray-950 rounded-xl shadow-2xl overflow-hidden sm:w-9/12 sm:mx-10 mb-4 sm:mb-10 sm:self-end mx-4">
+      <div className="flex flex-col md:flex-row-reverse h-auto bg-gray-950 rounded-xl shadow-2xl overflow-hidden sm:w-9/12 sm:mx-10 mb-4 sm:mb-10 sm:self-end mx-4">
         <div
           ref={(el) => (textBlocks.current[1] = el)}
           className="w-full p-6 md:text-left flex flex-col justify-center"
@@ -64,7 +64,7 @@ const Page3 = () => {
       </div>
 
       {/* Section 3 */}
-      <div className="flex flex-col md:flex-row h-[60vh] bg-gray-950 rounded-xl shadow-2xl overflow-hidden sm:w-9/12 sm:mx-10 mb-4 sm:mb-10 mx-4">
+      <div className="flex flex-col md:flex-row h-auto bg-gray-950 rounded-xl shadow-2xl overflow-hidden sm:w-9/12 sm:mx-10 mb-4 sm:mb-10 mx-4">
         <div
           ref={(el) => (textBlocks.current[2] = el)}
           className="w-full p-6 md:text-left flex flex-col justify-center"
