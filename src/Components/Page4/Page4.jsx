@@ -24,7 +24,7 @@ function Page2() {
   }, [])
 
   return (
-    <div ref={block} className='flex-1 h-full p-5 pt-0 px-10 border-none bg-gray-900 overflow-hidden'>
+    <div ref={block} className='flex-1 h-full pt-0 sm:px-10 border-none bg-gray-900 overflow-hidden'>
       <div
         className="flex h-full bg-center bg-green-500 bg-cover relative justify-end items-center overflow-x-hidden rounded-md overflow-hidden"
         style={{ backgroundImage: `url('/Wall_TV.png')` }}
@@ -32,7 +32,7 @@ function Page2() {
         <div className='h-full w-full bg-black bg-opacity-20 flex items-end pb-10'>
           <p
             ref={(el) => (tagsRef.current[0] = el)}
-            className="text-white text-2xl mt-4 mx-auto text-center px-4 pb-10 md:px-8 max-w-4xl josefin-sans"
+            className="text-white text:xl sm:text-2xl mt-4 mx-auto text-center px-4 sm:pb-10 md:px-8 max-w-4xl josefin-sans"
           >
             <span className='font-bold'>Custom-designed Virtual Environments</span>, Crafted specifically for our motion simulators, delivering ultra-realistic terrain interaction and immersive driving experiences across diverse landscapes.
           </p>

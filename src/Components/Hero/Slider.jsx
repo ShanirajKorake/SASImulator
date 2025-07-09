@@ -41,7 +41,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative w-full h-[700px] sm:flex sm:flex-1 overflow-hidden">
+    <div className="sm:hidden relative w-full h-[700px] sm:flex sm:flex-1 overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}

@@ -31,9 +31,9 @@ function Punch1() {
     <div
       ref={srotri}
       id="body2"
-      className="flex bg-gray-900 text-gray-200 text-[4rem] border-none px-16 bebas-neue1 tracking-[0.9rem] overflow-hidden"
+      className="flex bg-gray-900 text-gray-200 text-[2rem] sm:text-[4rem] border-none px-8 sm:px-16 bebas-neue1 tracking-[0.1] sm:tracking-[0.9rem] overflow-hidden"
     >
-      <div className="italic overflow-hidden h-16" ref={punch}>
+      <div className="italic overflow-hidden h-10 sm:h-16 w-full" ref={punch}>
         OUR PRODUCTS
       </div>
     </div>

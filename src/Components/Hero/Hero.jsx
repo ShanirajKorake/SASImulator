@@ -41,44 +41,46 @@ function Hero() {
     
 
   return (
-    // <div 
-    //   className="flex-1 bg-green-500 p-10 bg-cover bg-center relative flex items-center 2xl:px-80"
-    //   ref={hero}
-    //   style={{ backgroundImage: `url('/Render_1.jpg')` }}
-    // >
-    //   {/* Background Overlay */}
-    //   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60"></div>
+    <>
+    <div 
+      className="hidden sm:flex flex-1 bg-green-500 p-10 bg-cover bg-center relative items-center "
+      ref={hero}
+      style={{ backgroundImage: `url('/Render_1.jpg')` }}
+    >
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60"></div>
 
-    //   {/* Content */}
-    //   <div className="relative z-10 inline-flex flex-col drop-shadow-xl shadow-black text-white items-start">
-    //     {/* Heading */}
-    //     <div
-    //       className=" relative font-bold bebas-neue1 pl-20 tracking-[0.6 rem] 2xl:text-[9em] inline-flex items-baseline glow-text "
-    //       ref={head1}
-    //     >
-    //       <span>
-    //         S<span className="neon-text">A</span>S<span className="neon-text">I</span>
-    //       </span>
-    //       <span className="pl-1 2xl:text-[6rem] tracking-wider">MULATOR</span>
-    //       <img
-    //         ref={leaf1}
-    //         src="./leaf1.png"
-    //         alt="leaf"
-    //         className="h-[0.8em] ml-2 align-baseline animate-spin-slow"
-    //       />
-    //     </div>
+      {/* Content */}
+      <div className="relative z-10 inline-flex flex-col drop-shadow-xl shadow-black text-white items-start">
+        {/* Heading */}
+        <div
+          className=" relative font-bold bebas-neue1 pl-15 tracking-[0.6 rem] text-[9em] inline-flex items-baseline glow-text "
+          ref={head1}
+        >
+          <span>
+            S<span className="neon-text">A</span>S<span className="neon-text">I</span>
+          </span>
+          <span className="pl-1 text-[6rem] tracking-wider">MULATOR</span>
+          <img
+            ref={leaf1}
+            src="./leaf1.png"
+            alt="leaf"
+            className="h-[0.8em] ml-2 align-baseline animate-spin-slow"
+          />
+        </div>
 
-    //     {/* Info Section */}
-    //     <div className="mt-4 pl-20 text-xl w-1/2 josefin-sans font-light leading-relaxed">
-    //       <p>
-            // A driving simulator with motion actuators is an advanced system designed to provide a
-            // realistic driving experience by mimicking the physical sensations of driving a car. This
-            // simulator can be used for professional driver training, research, and entertainment.
-    //       </p>
-    //     </div>
-    //   </div>
-    // </div>
+        {/* Info Section */}
+        <div className="mt-4 pl-15 text-xl w-1/2 josefin-sans font-light leading-relaxed">
+          <p>
+            A driving simulator with motion actuators is an advanced system designed to provide a
+            realistic driving experience by mimicking the physical sensations of driving a car. This
+            simulator can be used for professional driver training, research, and entertainment.
+          </p>
+        </div>
+      </div>
+    </div>
     <Carousel/>
+    </>
   );
 }
 
