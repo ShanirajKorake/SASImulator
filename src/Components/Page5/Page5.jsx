@@ -52,10 +52,10 @@ const ProductApplicationsCarousel = () => {
             }}
           >
             <div className="bg-opacity-50 p-6 rounded-xl max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-orange-400 mb-4">
+              <h2 className="text-4xl tracking-wide md:text-5xl font-bold text-orange-400 mb-4 bebas-neue1">
                 {slide.title}
               </h2>
-              <p className="text-lg text-gray-300">{slide.desc}</p>
+              <p className="text-lg text-gray-300 josefin-sans">{slide.desc}</p>
             </div>
           </div>
         ))}

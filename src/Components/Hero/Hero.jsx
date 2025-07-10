@@ -43,26 +43,26 @@
 //   // Set initial background manually
 //   hero.current.style.backgroundImage = "url('/Render_1.jpg')";
 
-//   // Intro animation - runs once
-//   const intro = gsap.timeline();
+  // // Intro animation - runs once
+  // const intro = gsap.timeline();
 
-//   intro.from(hero.current, {
-//     y: 500,
-//     opacity: 0,
-//     duration: 1,
-//     ease: 'power3.out',
-//   });
+  // intro.from(hero.current, {
+  //   y: 500,
+  //   opacity: 0,
+  //   duration: 1,
+  //   ease: 'power3.out',
+  // });
 
-//   intro.from(leaf1.current, {
-//     rotate: -45,
-//     x: -50,
-//     duration: 0.7,
-//     opacity: 0,
-//     ease: 'back.out(1.7)',
-//   });
+  // intro.from(leaf1.current, {
+  //   rotate: -45,
+  //   x: -50,
+  //   duration: 0.7,
+  //   opacity: 0,
+  //   ease: 'back.out(1.7)',
+  // });
 
-//   // Add a delay after intro animation ends
-//   intro.addPause("+=2");
+  // // Add a delay after intro animation ends
+  // intro.addPause("+=2");
 
 //   // Start the looping animation
 //   intro.add(() => {
@@ -145,7 +145,9 @@
 //   );
 // }
 
-// export default Hero;
+
+
+
 
 
 import { useGSAP } from '@gsap/react';
@@ -154,37 +156,15 @@ import gsap from 'gsap';
 import Carousel from './Slider';
 
 function Hero() {
-  const head1 = useRef();
-  const leaf1 = useRef();
+  const section1 = useRef();
+  const section2 = useRef();
   const hero = useRef();
-  const head1Wrapper = useRef();
-  const bgFadeRef = useRef(); // For fading background overlay
+  const texxt1 = useRef();
+  const texxt2 = useRef();
+  const leaf1 = useRef();
 
   useGSAP(() => {
-    // Set initial background
-    hero.current.style.backgroundImage = "url('/Render_1.jpg')";
-
-    // Skip animations on mobile devices
     if (window.innerWidth < 640) return;
-
-    // Helper for fading background
-    const fadeBackground = (url) => {
-      const fade = gsap.timeline();
-      fade.to(bgFadeRef.current, {
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power2.out',
-        onComplete: () => {
-          hero.current.style.backgroundImage = `url('${url}')`;
-        },
-      });
-      fade.to(bgFadeRef.current, {
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power2.in',
-      });
-      return fade;
-    };
 
     // Intro animation
     const intro = gsap.timeline();
@@ -204,87 +184,116 @@ function Hero() {
       ease: 'back.out(1.7)',
     });
 
-    // Delay before starting loop
     intro.addPause('+=2');
 
-    // Looping animation
-    intro.add(() => {
-      const content = head1Wrapper.current;
-      const moveX = window.innerWidth / 2;
+    // Initial state
+    gsap.set(section1.current, { opacity: 1 });
+    gsap.set(section2.current, { opacity: 0 });
+    // Looping transition
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 9 });
+    tl.delay(5);
 
-      const loop = gsap.timeline({ repeat: -1, repeatDelay: 5 });
 
-      loop.to(content, {
-        x: moveX,
-        duration: 1.5,
-        ease: 'power2.inOut',
-      });
 
-      loop.add(fadeBackground('/Render04.jpg'), '<');
+    tl.to(section1.current, {
+      opacity: 0,
+      duration: 0.8,
+      
+    }, 'fade');
 
-      loop.to({}, { duration: 5 }); // hold at right with new bg
+    tl.to(section2.current, {
+      delay: 0.7,
+      opacity: 1,
+      duration: 0.8,
+      
+    }, 'fade');
 
-      loop.to(content, {
-        x: 0,
-        duration: 1.5,
-        ease: 'power2.inOut',
-      });
 
-      loop.add(fadeBackground('/Render_1.jpg'), '<');
-    });
-  }, []);
+    tl.to({}, { duration: 5 });
+
+
+    tl.to(section2.current, {
+      opacity: 0,
+      duration: 0.8,
+      
+    }, 'fadeBack');
+
+    tl.to(section1.current, {
+      delay: 0.7,
+      opacity: 1,
+      duration: 0.8,
+      
+    }, 'fadeBack');
+  });
 
   return (
     <>
-      <div
-        ref={hero}
-        className="hidden sm:flex flex-1 p-10 bg-cover bg-center relative items-center overflow-hidden w-full h-screen 2xl:px-10"
-        style={{ backgroundImage: `url('/Render_1.jpg')` }}
-      >
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60 z-10"></div>
-
-        {/* Background Fade Overlay */}
+      <div ref={hero} className="hidden lg:block relative w-full h-screen overflow-hidden">
+        {/* Section 1 */}
         <div
-          ref={bgFadeRef}
-          className="absolute inset-0 bg-black opacity-0 pointer-events-none z-20 transition-opacity duration-500"
-        ></div>
-
-        {/* Content */}
-        <div
-          ref={head1Wrapper}
-          className="relative z-30 text-white drop-shadow-xl shadow-black flex flex-col items-start"
+          ref={section1}
+          className="absolute inset-0 bg-cover  lg:bg-center flex items-center justify-start transition-opacity   2xl:px-40 xl:px-5"
+          style={{ backgroundImage: "url('/Render_1.jpg')" }}
         >
-          {/* Heading */}
-          <div
-            ref={head1}
-            className="font-bold bebas-neue1 tracking-[0.3rem] 2xl:text-[8rem] xl:text-[6rem] l:text-[5rem] inline-flex items-baseline glow-text"
-          >
-            <span>
-              S<span className="neon-text">A</span>S<span className="neon-text">I</span>
-            </span>
-            <span className="pl-1 2xl:text-[6rem] xl:text-[4rem] l:text-[3rem] tracking-wider">MULATOR</span>
-            <img
-              ref={leaf1}
-              src="./leaf1.png"
-              alt="leaf"
-              className="h-[0.8em] ml-2 align-baseline animate-spin-slow"
-            />
-          </div>
-
-          {/* Info Text */}
-          <div className="text-xl w-full sm:w-[50vw] josefin-sans font-light leading-relaxed pr-10">
-            <p>
+          <div ref={texxt1} className="pl-20 z-10 text-white max-w-[50vw]">
+            <h1 className="font-bold bebas-neue1 tracking-[0.3rem] 2xl:text-[8rem] xl:text-[6rem] lg:text-[5rem] inline-flex items-baseline glow-text">
+              <span>
+                S<span className="neon-text">A</span>S<span className="neon-text">I</span>
+              </span>
+              <span className="pl-1 2xl:text-[6rem] xl:text-[4rem] lg:text-[3rem] tracking-wider">
+                MULATOR
+              </span>
+              <img
+                ref={leaf1}
+                src="./leaf1.png"
+                alt="leaf"
+                className="h-[0.8em] ml-2 align-baseline animate-spin-slow"
+              />
+            </h1>
+            <p className="text-xl 2xl:text-2xl xl:text-xl lg:text-lg josefin-sans font-light leading-relaxed pr-10 2xl:pr-40">
               A driving simulator with motion actuators is an advanced system designed to provide a
-              realistic driving experience by mimicking the physical sensations of driving a car. This
-              simulator can be used for professional driver training, research, and entertainment.
+              realistic driving experience by mimicking the physical sensations of driving a car.
+              This simulator can be used for professional driver training, research, and entertainment.
             </p>
           </div>
         </div>
+
+        {/* Section 2 */}
+        <div
+          ref={section2}
+          className="absolute inset-0 bg-cover bg-center flex items-center justify-end transition-opacity  opacity-0"
+          style={{ backgroundImage: "url('/Render04.jpg')" }}
+        >
+          <div ref={texxt2} className="pl-20 text-white max-w-[50vw]">
+            <h1 className="font-bold bebas-neue1 tracking-[0.3rem] 2xl:text-[8rem] xl:text-[6rem] lg:text-[5rem] inline-flex items-baseline glow-text">
+              <span>
+                S<span className="neon-text">A</span>S<span className="neon-text">I</span>
+              </span>
+              <span className="pl-1 2xl:text-[6rem] xl:text-[4rem] lg:text-[3rem] tracking-wider">
+                MULATOR
+              </span>
+              <img
+                src="./leaf1.png"
+                alt="leaf"
+                className="h-[0.8em] ml-2 align-baseline animate-spin-slow"
+              />
+            </h1>
+            <p className="text-xl 2xl:text-2xl xl:text-xl lg:text-lg josefin-sans font-light leading-relaxed pr-10 2xl:pr-40">
+              A driving simulator with motion actuators is an advanced system designed to provide a
+              realistic driving experience by mimicking the physical sensations of driving a car.
+              This simulator can be used for professional driver training, research, and entertainment.
+            </p>
+          </div>
+        </div>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60 z-0"></div>
       </div>
 
-      {/* Carousel section */}
-      <Carousel />
+      {/* Carousel */}
+      <div className="relative z-10">
+        <Carousel />
+      </div>
     </>
   );
 }

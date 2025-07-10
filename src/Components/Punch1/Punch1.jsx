@@ -31,9 +31,9 @@ function Punch1() {
     <div
       ref={srotri}
       id="body2"
-      className="flex bg-gray-900 text-gray-200 text-[2rem] sm:text-[4rem] border-none px-8 sm:px-16 bebas-neue1 tracking-[0.1rem] sm:tracking-[0.9rem] z-10"
+      className="hidden lg:flex bg-gray-900 text-gray-200 text-[1.8rem] md:text-[2.5rem]   lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.5rem] border-none px-8 sm:px-16 bebas-neue1 tracking-[0.1rem] md:tracking-[0.4rem] lg:tracking-[0.5rem] xl:tracking-[0.6rem] 2xl:tracking-[0.6rem] z-10 leading-[.4]"
     >
-      <div className="italic block w-full h-7 sm:h-14" ref={punch}>
+      <div className="italic block w-full h-fit " ref={punch}>
         WE SIMULATE REALITY
       </div>
     </div>

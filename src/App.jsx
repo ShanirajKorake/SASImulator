@@ -15,12 +15,12 @@ import Page6 from './Components/Page6/Page6'
 function App() {
   return (
     <div>
-  <div className="w-full flex flex-col sm:h-screen border-white bg-black">
+  <div className="w-full flex flex-col lg:h-screen border-white bg-black">
       <Header />
       <Hero />
     </div>
       <Page5/>
-    <div className="flex flex-col h-[600px] sm:h-screen">
+    <div className="flex flex-col h-[75vh] lg:h-screen">
       <Punch1/>
       <Page2/>
     </div>
@@ -30,7 +30,7 @@ function App() {
     <Page3/>
     </div>
     
-    <div className="flex flex-col h-[37vh] sm:h-[110vh] ">
+    <div className="flex flex-col h-[37vh] md:h-[45vh] lg:h-[110vh] ">
     <Punch4/>
     <Page4/>
     </div>

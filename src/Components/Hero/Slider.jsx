@@ -41,7 +41,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="sm:hidden relative w-full h-[70vh] flex sm:flex-1 overflow-hidden">
+    <div className="lg:hidden relative w-full h-[70vh] flex sm:flex-1 overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -56,7 +56,19 @@ export default function Carousel() {
           {/* Overlay with semi-transparent black */}
           <div className="w-full h-full bg-black bg-opacity-20 flex flex-col justify-end items-center px-6 pb-2 text-center">
             <h2 className="text-gray-200 text-4xl sm:text-6xl font-bold mb-4 drop-shadow-lg bebas-neue1">
-              {slide.title}
+              <h1 className="font-bold bebas-neue1 tracking-wider sm:tracking-[0.3rem] text-[3rem] 2xl:text-[8rem] xl:text-[6rem] lg:text-[5rem] inline-flex items-baseline glow-text">
+              <span>
+                S<span className="neon-text">A</span>S<span className="neon-text">I</span>
+              </span>
+              <span className="pl-1 text-[2.3rem] 2xl:text-[6rem] xl:text-[4rem] lg:text-[3rem] tracking-wider">
+                MULATOR
+              </span>
+              <img
+                src="./leaf1.png"
+                alt="leaf"
+                className="h-[0.8em] ml-2 align-baseline animate-spin-slow"
+              />
+            </h1>
             </h2>
             <p className="text-gray-200 text-sm bg-black bg-opacity-35 rounded sm:text-2xl max-w-2xl drop-shadow-md josefin-sans">
               {slide.subtitle}
