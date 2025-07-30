@@ -15,7 +15,7 @@ import Page6 from './Components/Page6/Page6'
 function App() {
   return (
     <div>
-  <div className="w-full flex flex-col lg:h-screen border-white bg-black">
+  <div className="w-full flex flex-col lg:h-screen border-white bg-black ">
       <Header />
       <Hero />
     </div>

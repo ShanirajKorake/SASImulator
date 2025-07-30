@@ -17,7 +17,7 @@ function Footer() {
             {/* Left Section: Logo + Text */}
             <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start">
                 <div ref={footerLogo} className="flex items-center gap-2">
-                    <img src="./sas-dark.png" alt="logo" className="w-16 h-16" />
+                    <img src="./sas-dark.png" alt="logo_compony" className="w-16 h-16" />
                     <div className="w-full leading-[0.9] text-4xl bebas-neue1 text-center lg:text-left">
                         <div className="hidden lg:block tracking-wider">SAS AUTOMATION</div>
                         <div className="block lg:hidden tracking-wide">
@@ -43,7 +43,7 @@ Automation`}
             </div>
 
             {/* Right Section: Link */}
-            <div className="w-full sm:w-auto lg:w-1/3 flex justify-center lg:justify-end hidden lg:flex">
+            <div className="w-full sm:w-auto lg:w-1/3 justify-center lg:justify-end hidden lg:flex">
                 <a
                     href="https://sasautomation.in/"
                     target="_blank"
