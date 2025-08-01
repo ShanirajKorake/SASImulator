@@ -26,11 +26,39 @@ const slides = [
     title: "Public Safety Training",
     desc: "Train emergency responders and transport operators for critical scenarios virtually."
   },
+  {
+    title: "Vehicle Dynamics Research",
+    desc: "Conduct research on vehicle behavior under varied terrains, speeds, and weather conditions."
+  },
+  {
+    title: "ADAS & Autonomous Systems Testing",
+    desc: "Test and validate Advanced Driver-Assistance Systems (ADAS) and autonomous driving logic."
+  },
+  {
+    title: "Urban Planning & Traffic Simulation",
+    desc: "Simulate traffic flows and test infrastructure designs for smart city development."
+  },
+  {
+    title: "Fleet Driver Assessment",
+    desc: "Evaluate driving performance of commercial fleet drivers to ensure safety and efficiency."
+  },
+  {
+    title: "Rehabilitation & Special Needs Training",
+    desc: "Assist physically or neurologically challenged individuals in learning or relearning to drive."
+  },
+  {
+    title: "Consumer Experience Demonstration",
+    desc: "Showcase vehicle performance and features to customers in a simulated environment."
+  }
 ];
+
 
 const ProductApplicationsCarousel = () => {
   return (
-    <div className="w-full bg-gray-900 py-10 text-gray-100">
+    <div 
+    className="w-full bg-gray-900 py-10 text-gray-100"
+    id="slider11"
+    >
       <Carousel
         responsive={responsive}
         infinite

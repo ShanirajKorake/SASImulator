@@ -2,12 +2,12 @@ import React, { useState,useEffect } from 'react';
 
 const slides = [
   {
-    image: '/2.jpg',
+    image: '/3.jpg',
     title: 'SASImulator',
     subtitle: 'A driving simulator with motion actuators is an advanced system designed to provide a realistic driving experience by mimicking the physical sensations of driving a car. This simulator can be used for professional driver training, research, and entertainment.',
   },
   {
-    image: '/Render05.jpg',
+    image: '/4.png',
     title: 'SASImulator',
     subtitle: 'A driving simulator with motion actuators is an advanced system designed to provide a realistic driving experience by mimicking the physical sensations of driving a car. This simulator can be used for professional driver training, research, and entertainment.',
   },
@@ -54,7 +54,9 @@ export default function Carousel() {
           }}
         >
           {/* Overlay with semi-transparent black */}
-          <div className="w-full h-full bg-black bg-opacity-20 flex flex-col justify-end items-center px-6 pb-2 text-center">
+          <div className="w-full h-full bg-black bg-opacity-20 flex flex-col justify-end items-center px-6 pb-2 text-center ">
+            <div className='bg-black bg-opacity-35 rounded p-4'>
+              
             <h2 className="text-gray-200 text-4xl sm:text-6xl font-bold mb-4 drop-shadow-lg bebas-neue1">
               <h1 className="font-bold bebas-neue1 tracking-wider sm:tracking-[0.3rem] text-[3rem] 2xl:text-[8rem] xl:text-[6rem] lg:text-[5rem] inline-flex items-baseline glow-text">
               <span>
@@ -67,13 +69,14 @@ export default function Carousel() {
                 src="./leaf1.png"
                 alt="leaf"
                 className="h-[0.8em] ml-2 align-baseline animate-spin-slow"
-              />
+                />
             </h1>
             </h2>
-            <p className="text-gray-200 text-sm bg-black bg-opacity-35 rounded sm:text-2xl max-w-2xl drop-shadow-md josefin-sans">
+            <p className="text-gray-200 text-sm  sm:text-2xl max-w-2xl drop-shadow-md josefin-sans">
               {slide.subtitle}
             </p>
           </div>
+                </div>
         </div>
       ))}
 

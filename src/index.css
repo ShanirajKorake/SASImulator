@@ -60,7 +60,7 @@ body{
 .shine-effect {
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, transparent, rgb(230, 224, 224), transparent) 4;
-  box-shadow: 0 0 10px rgb(88, 86, 86), 0 0 20px rgb(211, 191, 191);
+  /* box-shadow: 0 0 10px rgb(88, 86, 86), 0 0 20px rgb(211, 191, 191); */
 }
 
 .shine-effect2 {

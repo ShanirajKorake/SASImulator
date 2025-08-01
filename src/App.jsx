@@ -15,10 +15,11 @@ import Page6 from './Components/Page6/Page6'
 function App() {
   return (
     <div>
-  <div className="w-full flex flex-col lg:h-screen border-white bg-black ">
-      <Header />
-      <Hero />
-    </div>
+<div className="w-full flex flex-col lg:h-screen border-white bg-black relative z-0 overflow-visible">
+  <Header />
+  <Hero />
+</div>
+
       <Page5/>
     <div className="flex flex-col h-[75vh] lg:h-screen">
       <Punch1/>

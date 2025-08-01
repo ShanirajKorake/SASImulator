@@ -28,7 +28,7 @@ const Page3 = () => {
       className="flex flex-col bg-gray-900 xl:min-h-screen text-gray-200 josefin-sans"
     >
       {/* Section 1 */}
-      <div className="flex flex-col lg:flex-row h-auto bg-gray-950 rounded-xl shadow-2xl overflow-hidden lg:w-9/12 lg:ml-10 mb-4 lg:mb-10 mx-4 items-center">
+      <div id="driving-simulator" className="flex flex-col lg:flex-row h-auto bg-gray-950 rounded-xl shadow-2xl overflow-hidden lg:w-9/12 lg:ml-10 mb-4 lg:mb-10 mx-4 items-center">
         <div
           ref={(el) => (textBlocks.current[0] = el)}
           className="w-full p-6 md:text-left flex flex-col justify-center"
@@ -46,7 +46,7 @@ const Page3 = () => {
       </div>
 
       {/* Section 2 */}
-      <div className="flex flex-col lg:flex-row-reverse h-auto bg-gray-950 rounded-xl shadow-2xl overflow-hidden lg:w-9/12 lg:mx-10 mb-4 lg:mb-10 sm:self-end mx-4 items-center">
+      <div id="automotive-testing" className="flex flex-col lg:flex-row-reverse h-auto bg-gray-950 rounded-xl shadow-2xl overflow-hidden lg:w-9/12 lg:mx-10 mb-4 lg:mb-10 sm:self-end mx-4 items-center">
         <div
           ref={(el) => (textBlocks.current[1] = el)}
           className="w-full p-6 md:text-left flex flex-col justify-center"
@@ -64,7 +64,7 @@ const Page3 = () => {
       </div>
 
       {/* Section 3 */}
-      <div className="flex flex-col lg:flex-row h-auto bg-gray-950 rounded-xl shadow-2xl items-center overflow-hidden lg:w-9/12 lg:mx-10 mb-4 lg:mb-10 mx-4">
+      <div id="driving-test" className="flex flex-col lg:flex-row h-auto bg-gray-950 rounded-xl shadow-2xl items-center overflow-hidden lg:w-9/12 lg:mx-10 mb-4 lg:mb-10 mx-4">
         <div
           ref={(el) => (textBlocks.current[2] = el)}
           className="w-full p-6 md:text-left flex flex-col justify-center"
