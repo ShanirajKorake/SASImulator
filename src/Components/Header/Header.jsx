@@ -124,10 +124,10 @@ Automation`}
                             {openDropdown === "products" && (
                                 <ul
                                     ref={productsDropdownRef}
-                                    className="absolute top-full -left-32 mt-2 bg-black text-white border border-gray-800 rounded shadow-lg w-80 z-[999]"
+                                    className="absolute top-full -left-5 mt-2 bg-black text-white border border-gray-800 rounded shadow-lg w-72 z-[999]"
                                 >
                                     <li
-                                        className="px-4 py-2 hover:text-green-400 cursor-pointer w-full text-center"
+                                        className="px-4 py-2 pl-5 hover:text-green-400 cursor-pointer w-full"
                                         onClick={() => {
                                             document.getElementById("product")?.scrollIntoView({ behavior: "smooth" });
                                             setOpenDropdown(null);
@@ -136,7 +136,7 @@ Automation`}
                                         Driving Motion Simulator
                                     </li>
                                     <li
-                                        className="px-4 py-2 hover:text-green-400 cursor-pointer w-full text-center"
+                                        className="px-4 py-2 pl-5 hover:text-green-400 cursor-pointer w-full"
                                         onClick={() => {
                                             document.getElementById("automotive-testing")?.scrollIntoView({ behavior: "smooth" });
                                             setOpenDropdown(null);
@@ -145,7 +145,7 @@ Automation`}
                                         Automotive Testing Simulator
                                     </li>
                                     <li
-                                        className="px-4 py-2 hover:text-green-400 cursor-pointer w-full text-center"
+                                        className="px-4 py-2 pl-5 hover:text-green-400 cursor-pointer w-full"
                                         onClick={() => {
                                             document.getElementById("driving-test")?.scrollIntoView({ behavior: "smooth" });
                                             setOpenDropdown(null);
@@ -167,7 +167,7 @@ Automation`}
                             {openDropdown === "services" && (
                                 <ul
                                     ref={servicesDropdownRef}
-                                    className="absolute top-full -left-32 mt-2 bg-black text-white border border-gray-800 rounded shadow-lg w-80 z-[999]"
+                                    className="absolute top-full -left-5 mt-2 bg-black text-white border border-gray-800 rounded shadow-lg w-80 z-[999]"
                                 >
                                     {[
                                         "Driving Simulator Training",
@@ -178,7 +178,7 @@ Automation`}
                                     ].map((item, i) => (
                                         <li
                                             key={i}
-                                            className="px-4 py-2 hover:text-green-400 cursor-pointer w-full text-center"
+                                            className="px-4 py-2 hover:text-green-400 cursor-pointer w-full pl-5"
                                             onClick={() => {
                                                 document.getElementById("slider11")?.scrollIntoView({ behavior: "smooth" });
                                                 setOpenDropdown(null);
